@@ -46,13 +46,14 @@ function renderGenerator() {
 }
 
 function renderWakePage() {
-  // 优先通过真实链接点击触发协议，兼容部分浏览器对 replace() 的拦截。
-  const link = document.createElement('a')
-  link.href = target
-  link.style.display = 'none'
-  document.body.appendChild(link)
-  link.click()
-  window.setTimeout(() => { window.location.href = target }, 80)
+  // 使用隐藏 iframe 触发自定义 Scheme，兼容移动浏览器的唤醒方式。
+  const iframe = document.createElement('iframe')
+  iframe.style.display = 'none'
+  iframe.src = target
+  document.body.appendChild(iframe)
+  window.setTimeout(() => iframe.remove(), 1000)
+
+  // 只有配置了备用地址时才延迟跳转，避免覆盖 Scheme 唤醒。
   if (fallback) window.setTimeout(() => { window.location.replace(fallback) }, 1800)
 }
 
