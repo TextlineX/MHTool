@@ -6,6 +6,15 @@ body { margin: 0; min-width: 320px; }
 .eyebrow { color: #7da8ff; font-size: 12px; font-weight: 700; letter-spacing: .16em; }
 h1 { margin: 14px 0 10px; font-size: 30px; }
 .desc { margin: 0 0 24px; color: #9eacc3; line-height: 1.7; }
+label { display: grid; gap: 8px; margin: 16px 0; color: #cbd6e8; font-size: 13px; font-weight: 600; }
+input { width: 100%; padding: 12px; border: 1px solid #2b4265; border-radius: 9px; outline: 0; color: #e8eefc; background: #0b1527; font: inherit; font-weight: 400; }
+input:focus { border-color: #8bb4ff; }
+.optional { color: #71829e; font-weight: 400; }
+.result { display: grid; gap: 8px; margin: 22px 0 16px; padding: 14px; border-radius: 12px; background: #0b1527; color: #8e9db5; font-size: 13px; }
+.result code { line-height: 1.5; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.secondary { color: #c8d8ff; background: #1b2e4e; }
+.secondary:hover { background: #27436d; }
 .target { display: grid; gap: 7px; margin-bottom: 20px; padding: 14px; border-radius: 12px; background: #0b1527; color: #8e9db5; font-size: 13px; }
 code { overflow-wrap: anywhere; color: #c8d8ff; }
 button { width: 100%; padding: 13px 16px; border: 0; border-radius: 10px; color: #08101d; background: #8bb4ff; font: inherit; font-weight: 700; cursor: pointer; }
