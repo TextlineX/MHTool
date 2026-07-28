@@ -18,7 +18,7 @@ function renderGenerator() {
     <p class="desc">粘贴客户端的 URL Scheme，生成一个可以分享的网页唤醒链接。</p>
     <label>URL Scheme<input id="scheme" value="xhsuserprofile://user_id=68ebc3ac00000000370313a2" placeholder="例如：xhsuserprofile://user_id=..." /></label>
     <div class="result"><span>生成的链接</span><code id="result"></code></div>
-    <div class="actions"><button id="copy" type="button">复制链接</button><button id="preview" class="secondary" type="button">打开测试</button></div>
+    <div class="actions"><button id="copy" type="button">复制链接</button><button id="preview" class="secondary" type="button">打开应用</button></div>
     <p id="copy-status" class="status" aria-live="polite"></p>
   </section></main>`
 
