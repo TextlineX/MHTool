@@ -46,8 +46,13 @@ function renderGenerator() {
 }
 
 function renderWakePage() {
-  // 访问 /wake 后立即交给客户端 Scheme，不渲染中间页面。
-  window.location.replace(target)
+  // 优先通过真实链接点击触发协议，兼容部分浏览器对 replace() 的拦截。
+  const link = document.createElement('a')
+  link.href = target
+  link.style.display = 'none'
+  document.body.appendChild(link)
+  link.click()
+  window.setTimeout(() => { window.location.href = target }, 80)
   if (fallback) window.setTimeout(() => { window.location.replace(fallback) }, 1800)
 }
 
