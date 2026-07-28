@@ -10,6 +10,8 @@ if (location.pathname === '/wake' || location.pathname === '/redirect') {
   renderGenerator()
 } else if (location.pathname === '/relay') {
   renderGenerator()
+} else if (location.pathname === '/wechat') {
+  renderWechat()
 } else {
   renderHome()
 }
@@ -23,8 +25,40 @@ function renderHome() {
     <nav class="feature-list" aria-label="功能列表">
       <a class="feature" href="/scheme"><span><strong>URL Scheme 跳转</strong><small>输入 Scheme，点击按钮直接唤醒 App</small></span><b>›</b></a>
       <a class="feature" href="/relay"><span><strong>重定向中转链接</strong><small>输入 Scheme，生成可分享的 HTTPS 中转链接</small></span><b>›</b></a>
+      <a class="feature" href="/wechat"><span><strong>微信跳转</strong><small>输入网页地址，生成微信跳转链接</small></span><b>›</b></a>
     </nav>
   </section></main>`
+}
+
+function renderWechat() {
+  app.innerHTML = `
+  <main class="shell"><section class="card">
+    <a class="back" href="/">← 返回功能列表</a>
+    <div class="eyebrow">WECHAT REDIRECT</div>
+    <h1>微信跳转</h1>
+    <p class="desc">输入一个网页地址，生成微信中转链接。</p>
+    <label>目标网页地址<input id="wechat-url" type="url" value="https://github.com/TextlineX/MHTool" placeholder="https://example.com" /></label>
+    <div class="result"><span>生成的链接</span><code id="wechat-result"></code></div>
+    <div class="actions"><button id="wechat-copy" type="button">复制链接</button><a id="wechat-open" class="button secondary" href="#">打开链接</a></div>
+    <p id="wechat-status" class="status" aria-live="polite"></p>
+  </section></main>`
+
+  const input = document.querySelector<HTMLInputElement>('#wechat-url')!
+  const result = document.querySelector<HTMLElement>('#wechat-result')!
+  const open = document.querySelector<HTMLAnchorElement>('#wechat-open')!
+  const status = document.querySelector<HTMLParagraphElement>('#wechat-status')!
+  const makeLink = () => {
+    const url = `https://mp.weixinbridge.com/mp/wapredirect?url=${encodeURIComponent(input.value.trim())}`
+    result.textContent = url
+    open.href = url
+    return url
+  }
+  input.addEventListener('input', makeLink)
+  makeLink()
+  document.querySelector<HTMLButtonElement>('#wechat-copy')!.addEventListener('click', async () => {
+    await navigator.clipboard.writeText(makeLink())
+    status.textContent = '已复制链接。'
+  })
 }
 
 function renderGenerator() {

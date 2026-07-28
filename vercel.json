@@ -13,7 +13,9 @@
     { "source": "/scheme", "destination": "/" },
     { "source": "/scheme/:path*", "destination": "/" },
     { "source": "/relay", "destination": "/" },
-    { "source": "/relay/:path*", "destination": "/" }
+    { "source": "/relay/:path*", "destination": "/" },
+    { "source": "/wechat", "destination": "/" },
+    { "source": "/wechat/:path*", "destination": "/" }
   ],
   "headers": [
     {
