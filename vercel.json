@@ -9,7 +9,11 @@
     { "source": "/redirect", "destination": "/" },
     { "source": "/redirect/:path*", "destination": "/" },
     { "source": "/builder", "destination": "/" },
-    { "source": "/builder/:path*", "destination": "/" }
+    { "source": "/builder/:path*", "destination": "/" },
+    { "source": "/scheme", "destination": "/" },
+    { "source": "/scheme/:path*", "destination": "/" },
+    { "source": "/relay", "destination": "/" },
+    { "source": "/relay/:path*", "destination": "/" }
   ],
   "headers": [
     {
