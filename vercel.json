@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    { "source": "/wake", "destination": "/" },
+    { "source": "/wake/:path*", "destination": "/" }
+  ],
+  "headers": [
+    {
+      "source": "/wake",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    }
+  ]
+}
