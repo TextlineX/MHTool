@@ -7,7 +7,9 @@
     { "source": "/wake", "destination": "/" },
     { "source": "/wake/:path*", "destination": "/" },
     { "source": "/redirect", "destination": "/" },
-    { "source": "/redirect/:path*", "destination": "/" }
+    { "source": "/redirect/:path*", "destination": "/" },
+    { "source": "/builder", "destination": "/" },
+    { "source": "/builder/:path*", "destination": "/" }
   ],
   "headers": [
     {
