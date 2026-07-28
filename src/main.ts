@@ -60,6 +60,7 @@ function renderGenerator() {
 }
 
 function renderWakePage() {
+  document.title = '正在加载中'
   // 使用标准超链接触发自定义 Scheme。
   const link = document.createElement('a')
   link.href = target
