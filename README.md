@@ -21,10 +21,9 @@ npm run dev
 `vercel.json` 已配置 `/wake` 的 SPA 重写，因此部署后可以直接访问：
 
 ```text
-https://你的域名.vercel.app/wake?target=mhapp%3A%2F%2Fopen%2Fhome&fallback=https%3A%2F%2Fexample.com
+https://你的域名.vercel.app/wake?target=mhapp%3A%2F%2Fopen%2Fhome
 ```
 
 其中：
 
 - `target`：客户端注册的 URL Scheme，必须经过 URL 编码
-- `fallback`：未安装客户端时展示的网页备用入口，可选
