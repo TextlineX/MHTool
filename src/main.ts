@@ -6,13 +6,29 @@ const target = params.get('target') || params.get('url') || 'mhapp://open/home'
 
 if (location.pathname === '/wake' || location.pathname === '/redirect') {
   renderWakePage()
-} else {
+} else if (location.pathname === '/builder') {
   renderGenerator()
+} else {
+  renderHome()
+}
+
+function renderHome() {
+  app.innerHTML = `
+  <main class="shell"><section class="card home-card">
+    <div class="eyebrow">SCHEME TOOLBOX</div>
+    <h1>URL Scheme 工具箱</h1>
+    <p class="desc">选择一个功能开始使用。</p>
+    <nav class="feature-list" aria-label="功能列表">
+      <a class="feature" href="/builder"><span><strong>生成唤醒链接</strong><small>输入 URL Scheme，生成可分享的中转链接</small></span><b>›</b></a>
+      <a class="feature" href="/redirect?url=snssdk1128%3A%2F%2F"><span><strong>测试 Scheme</strong><small>直接测试已填写的 App URL Scheme</small></span><b>›</b></a>
+    </nav>
+  </section></main>`
 }
 
 function renderGenerator() {
   app.innerHTML = `
   <main class="shell"><section class="card">
+    <a class="back" href="/">← 返回功能列表</a>
     <div class="eyebrow">URL SCHEME BUILDER</div>
     <h1>生成唤醒链接</h1>
     <p class="desc">粘贴客户端的 URL Scheme，生成一个可以分享的网页唤醒链接。</p>
