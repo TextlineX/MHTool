@@ -46,12 +46,12 @@ function renderGenerator() {
 }
 
 function renderWakePage() {
-  // 使用隐藏 iframe 触发自定义 Scheme，兼容移动浏览器的唤醒方式。
-  const iframe = document.createElement('iframe')
-  iframe.style.display = 'none'
-  iframe.src = target
-  document.body.appendChild(iframe)
-  window.setTimeout(() => iframe.remove(), 1000)
+  // 使用标准超链接触发自定义 Scheme。
+  const link = document.createElement('a')
+  link.href = target
+  link.style.display = 'none'
+  document.body.appendChild(link)
+  link.click()
 
   // 只有配置了备用地址时才延迟跳转，避免覆盖 Scheme 唤醒。
   if (fallback) window.setTimeout(() => { window.location.replace(fallback) }, 1800)
