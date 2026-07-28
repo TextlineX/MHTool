@@ -2,9 +2,9 @@ import './style.css'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 const params = new URLSearchParams(location.search)
-const target = params.get('target') || 'mhapp://open/home'
+const target = params.get('target') || params.get('url') || 'mhapp://open/home'
 
-if (location.pathname === '/wake') {
+if (location.pathname === '/wake' || location.pathname === '/redirect') {
   renderWakePage()
 } else {
   renderGenerator()
@@ -27,8 +27,8 @@ function renderGenerator() {
   const launch = document.querySelector<HTMLAnchorElement>('#launch')!
   const copyStatus = document.querySelector<HTMLParagraphElement>('#copy-status')!
   const makeLink = () => {
-    const url = new URL('/wake', location.origin)
-    url.searchParams.set('target', schemeInput.value.trim())
+    const url = new URL('/redirect', location.origin)
+    url.searchParams.set('url', schemeInput.value.trim())
     result.textContent = url.toString()
     launch.href = schemeInput.value.trim() || '#'
     return url.toString()

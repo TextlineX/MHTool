@@ -5,7 +5,9 @@
   "installCommand": "npm install",
   "rewrites": [
     { "source": "/wake", "destination": "/" },
-    { "source": "/wake/:path*", "destination": "/" }
+    { "source": "/wake/:path*", "destination": "/" },
+    { "source": "/redirect", "destination": "/" },
+    { "source": "/redirect/:path*", "destination": "/" }
   ],
   "headers": [
     {

@@ -18,10 +18,10 @@ npm run dev
 - Output Directory：`dist`
 - Install Command：`npm install`
 
-`vercel.json` 已配置 `/wake` 的 SPA 重写，因此部署后可以直接访问：
+`vercel.json` 已配置 `/wake` 和 `/redirect` 的 SPA 重写，因此部署后可以直接访问：
 
 ```text
-https://你的域名.vercel.app/wake?target=mhapp%3A%2F%2Fopen%2Fhome
+https://你的域名.vercel.app/redirect?url=mhapp%3A%2F%2Fopen%2Fhome
 ```
 
 其中：
