@@ -18,7 +18,7 @@ function renderHome() {
   app.innerHTML = `
   <main class="shell"><section class="card home-card">
     <div class="eyebrow">SCHEME TOOLBOX</div>
-    <h1>URL Scheme 工具箱</h1>
+    <h1>盟洪工具箱</h1>
     <p class="desc">选择一个功能开始使用。</p>
     <nav class="feature-list" aria-label="功能列表">
       <a class="feature" href="/scheme"><span><strong>URL Scheme 跳转</strong><small>输入 Scheme，点击按钮直接唤醒 App</small></span><b>›</b></a>
