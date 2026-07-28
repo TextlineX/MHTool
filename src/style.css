@@ -19,5 +19,7 @@ input:focus { border-color: #8bb4ff; }
 code { overflow-wrap: anywhere; color: #c8d8ff; }
 button { width: 100%; padding: 13px 16px; border: 0; border-radius: 10px; color: #08101d; background: #8bb4ff; font: inherit; font-weight: 700; cursor: pointer; }
 button:hover { background: #a9c8ff; }
+.button { display: grid; place-items: center; width: 100%; padding: 13px 16px; border-radius: 10px; color: #08101d; background: #8bb4ff; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+.button:hover { background: #a9c8ff; }
 .fallback { display: block; margin-top: 16px; color: #9fc0ff; text-align: center; font-size: 14px; }
 .status { min-height: 22px; margin: 16px 0 0; color: #8e9db5; font-size: 13px; text-align: center; }
